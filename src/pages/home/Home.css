@@ -1,0 +1,47 @@
+.home
+{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.home h1
+{
+    margin: 0;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    background-color: #3f51b5;
+    text-transform: uppercase;
+}
+
+.home .panel
+{
+    top: 78px;
+    bottom: 0;   
+    position: absolute;
+}
+
+.home .panel .title
+{
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    padding: 15px;
+    font-size: 18px;
+    position: absolute;
+    text-transform: uppercase;
+}
+
+.home .panel .body
+{
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;   
+    overflow-y: auto;
+    position: absolute;    
+}

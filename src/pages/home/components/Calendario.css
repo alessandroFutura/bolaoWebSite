@@ -1,0 +1,115 @@
+.home .panel.calendar
+{
+    right: 0;
+    width: 35%;
+    border-left: 1px solid #ddd;
+}
+
+.home .panel.calendar .title
+{
+    background-color: #4caf50;
+}
+
+.home .panel.calendar .body .day
+{
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #e0ffe1;
+}
+
+.home .panel.calendar .body .day span
+{
+    float: right;
+    text-transform: uppercase;
+}
+
+.home .panel.calendar .body .matches
+{
+
+}
+
+.home .panel.calendar .body .matches .match
+{
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.home .panel.calendar .body .matches .match:hover
+{
+    background-color: #eee;
+}
+
+.home .panel.calendar .body .matches .match:not(:last-child)
+{
+    border-bottom: 1px solid #ddd;
+}
+
+.home .panel.calendar .body .matches .match .info
+{
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.home .panel.calendar .body .matches .match .score
+{
+    width: 100%;
+    display: table;
+}
+
+.home .panel.calendar .body .matches .match .score img
+{
+    width: 30px;
+    height: 20px;
+}
+
+.home .panel.calendar .body .matches .match .score span
+{
+    height: 20px;
+    padding: 0 5px;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.home .panel.calendar .body .matches .match .score .left
+{
+    width: 38%;
+    float: left;
+    text-align: right;
+}
+
+.home .panel.calendar .body .matches .match .score .left img,
+.home .panel.calendar .body .matches .match .score .left span
+{
+    float: right;
+    display: block;    
+}
+
+.home .panel.calendar .body .matches .match .score .center
+{
+    width: 24%;
+    float: left;
+    line-height: 20px;
+    text-align: center;
+}
+
+.home .panel.calendar .body .matches .match .score .center span:nth-child(2)
+{
+    font-size: 12px;
+}
+
+.home .panel.calendar .body .matches .match .score .right
+{
+    width: 38%;
+    float: left;
+    text-align: left;
+}
+
+.home .panel.calendar .body .matches .match .score .right img,
+.home .panel.calendar .body .matches .match .score .right span
+{
+    float: left;
+    display: block;    
+}

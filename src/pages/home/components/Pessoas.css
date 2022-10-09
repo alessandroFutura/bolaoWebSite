@@ -1,0 +1,82 @@
+.home .panel.people
+{
+    left: 0;
+    width: 65%;
+    border-right: 1px solid #ddd;
+}
+
+.home .panel.people .title
+{
+    background-color: #03a9f4;
+}
+
+.home .panel.people .body .person
+{
+    width: 100%;
+    padding: 20px;
+    display: table;
+    cursor: pointer;
+    position: relative;
+    transition: all .3s ease;
+}
+
+.home .panel.people .body .person:hover
+{
+    background-color: #eee;
+}
+
+.home .panel.people .body .person:not(:last-child)
+{
+    border-bottom: 1px solid #ddd;
+}
+
+.home .panel.people .body .person .position
+{
+    float: left;
+    width: 30px;
+    color: #fff;
+    padding: 2px 6px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 10px 10px 0 0;
+    background-color: #8bc34a;
+}
+
+.home .panel.people .body .person .image
+{
+    float: left;
+    width: 48px;
+    height: 48px;    
+    border-radius: 50%;
+    background-size: cover;    
+}
+
+.home .panel.people .body .person .name
+{
+    float: left;
+    padding: 12px;
+    font-size: 18px;
+}
+
+.home .panel.people .body .person .hits,
+.home .panel.people .body .person .points
+{
+    width: 62px;
+    float: right;
+    font-size: 16px;
+    text-align: right;
+    margin: 5px 0 5px 15px;
+}
+
+.home .panel.people .body .person .hits b,
+.home .panel.people .body .person .points b
+{
+    font-size: 26px;
+    color: #009688;
+}
+
+.home .panel.people .body .person .hits span,
+.home .panel.people .body .person .points span
+{
+    margin-left: 4px;
+}

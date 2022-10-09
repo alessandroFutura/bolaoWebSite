@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Oswald', sans-serif;    
+}
+
+.box-shadow
+{
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.19), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
