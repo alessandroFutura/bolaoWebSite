@@ -1,15 +1,27 @@
-import React, {useContext} from "react";
+import React, {useEffect, useState} from "react";
 
-import Context from '../../../Context.js';
+import axios from "axios";
 
 import "./Pessoas.css";
 
 const Pessoas = () => {
 
-    const {pessoas} = useContext(Context);
+    useEffect(() => {
+        getPessoas();
+    },[]);
+
+    const [pessoas, setPessoas] = useState([]);
+    
+    const getPessoas = () => {
+        axios.post(`http://localhost/bolaocopa2022/?action=getPessoas`).then((res) => {
+            setPessoas(res.data);
+        }).catch((res) => {
+            
+        });
+    };
 
     const handlePersonClick = (pessoa) => {
-        console.log(pessoa);
+        window.location.href = `/pessoa?idPessoa=${pessoa.idPessoa}`;
     };
 
     return (

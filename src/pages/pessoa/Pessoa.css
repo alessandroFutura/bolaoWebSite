@@ -1,0 +1,174 @@
+.pessoa
+{
+    text-align: center;
+}
+
+.pessoa .imagem
+{
+    width: 68px;
+    float: left;
+    height: 68px;    
+    margin: 20px;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+.pessoa .nome
+{
+    float: left;
+    margin: 38px 0;
+    font-size: 24px;
+}
+
+.pessoa button
+{
+    float: right;
+    border: none;
+    padding: 37px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #f44336;
+    background-color: #feedeb;
+}
+
+.pessoa .pontos,
+.pessoa .acertos
+{
+    float: right;
+    font-size: 24px;
+    color: #9c27b0;
+    margin: 38px 20px;
+    font-weight: bold;
+}
+
+.jogos
+{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 188px;
+    overflow-y: auto;
+    position: absolute;
+    border-top: 1px solid #ddd;
+}
+
+.jogos .jogo
+{
+    padding: 15px;
+}
+
+.jogos .jogo
+{
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all .3s ease;
+}
+
+.jogos .jogo:hover
+{
+    background-color: #eee;
+}
+
+.jogos .jogo:not(:last-child)
+{
+    border-bottom: 1px solid #ddd;
+}
+
+.jogos .jogo .info-left
+{
+    top: 44px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.jogos .jogo .info-right
+{
+    top: 42px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.jogos .jogo .info-2,
+.jogos .jogo .info-3
+{
+    text-align: center;
+}
+
+.jogos .jogo .score
+{
+    width: 100%;
+    display: table;
+}
+
+.jogos .jogo .score img
+{
+    width: 64px;
+    height: 42px;
+}
+
+.jogos .jogo .score span
+{
+    padding: 0 5px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.jogos .jogo .score .left
+{
+    width: 38%;
+    float: left;
+    text-align: right;
+}
+
+.jogos .jogo .score .left img,
+.jogos .jogo .score .left span
+{
+    float: right;
+    display: block;    
+}
+
+.jogos .jogo .score .center
+{
+    width: 24%;
+    float: left;
+    line-height: 20px;
+    text-align: center;
+}
+
+.jogos .jogo .score .center .palpite
+{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.jogos .jogo .score .center span:nth-child(2)
+{
+    font-size: 12px;
+}
+
+.jogos .jogo .score .right
+{
+    width: 38%;
+    float: left;
+    text-align: left;
+}
+
+.jogos .jogo .score .right img,
+.jogos .jogo .score .right span
+{
+    float: left;
+    display: block;    
+}
+
+.jogos .jogo .score .left span,
+.jogos .jogo .score .right span
+{
+    font-size: 18px;
+    padding: 11px 10px;
+}

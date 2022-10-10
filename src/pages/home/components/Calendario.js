@@ -1,6 +1,6 @@
-import React, {useContext} from "react";
+import React, {useEffect, useState} from "react";
 
-import Context from '../../../Context.js';
+import axios from "axios";
 
 import moment from 'moment';
 import 'moment/locale/pt-br';
@@ -9,10 +9,22 @@ import "./Calendario.css";
 
 const Calendario = () => {
 
-    const {calendario} = useContext(Context);
+    useEffect(() => {
+        getCalendario();
+    },[]);
+    
+    const [calendario, setCalendario] = useState([]);
 
-    const handleMatchClick = (match) => {
-        console.log(match);
+    const getCalendario = () => {
+        axios.post(`http://localhost/bolaocopa2022/?action=getCalendario`).then((res) => {
+            setCalendario(res.data);
+        }).catch((res) => {
+            
+        });
+    };
+
+    const handleMatchClick = (jogo) => {
+        window.location.href = `/jogo?idJogo=${jogo.idJogo}`;
     };
 
     return (
