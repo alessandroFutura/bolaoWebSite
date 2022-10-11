@@ -23,12 +23,42 @@
 .pessoa button
 {
     float: right;
-    border: none;
-    padding: 37px;
+    border: none;    
     font-size: 30px;
-    cursor: pointer;
+    cursor: pointer;    
+}
+
+.pessoa button.btn-back
+{
+    padding: 37px;
     color: #f44336;
     background-color: #feedeb;
+}
+
+.pessoa button.btn-sort
+{
+    color: #2196f3;
+    padding: 30px 37px;
+    background-color: #f0f8fe;
+}
+
+.pessoa button.btn-sort.btn-selected
+{
+    padding: 29px 36px;
+    border: 1px solid #b0dcff;
+    background-color: #d2ebff;
+}
+
+.pessoa button.btn-sort.btn-sort-asc svg:nth-child(2),
+.pessoa button.btn-sort.btn-sort-desc svg:nth-child(1)
+{
+    display: none;
+}
+
+.pessoa button span
+{
+    display: block;
+    font-size: 12px;
 }
 
 .pessoa .pontos,
