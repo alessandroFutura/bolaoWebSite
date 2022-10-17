@@ -45,7 +45,7 @@ const Pessoa = () => {
     };
 
     const handleBackClick = () => {
-        window.history.go(-1);
+        window.location.href = '/';
     };
 
     const handleSortClick = (key) => {

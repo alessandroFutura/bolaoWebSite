@@ -1,0 +1,155 @@
+.jogo
+{
+    padding: 15px;
+    position: relative;
+    transition: all .3s ease;
+}
+
+.jogo .info
+{
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.jogo .score
+{
+    width: 100%;
+    display: table;
+}
+
+.jogo .score img
+{
+    width: 48px;
+    height: 32px;
+    margin: 8px 0;
+}
+
+.jogo .score span
+{
+    height: 20px;
+    padding: 0 5px;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.jogo .score .left
+{
+    width: 38%;
+    float: left;
+    text-align: right;
+}
+
+.jogo .score .left img,
+.jogo .score .left span
+{
+    float: right;
+    display: block;    
+}
+
+.jogo .score .center
+{
+    width: 24%;
+    float: left;
+    padding: 12px 0;
+    line-height: 20px;
+    text-align: center;
+}
+
+.jogo .score .center span:nth-child(2)
+{
+    font-size: 12px;
+}
+
+.jogo .score .right
+{
+    width: 38%;
+    float: left;
+    text-align: left;
+}
+
+.jogo .score .right img,
+.jogo .score .right span
+{
+    float: left;
+    display: block;    
+}
+
+.jogo .score .left span,
+.jogo .score .right span
+{
+    margin: 12px 6px;
+}
+
+.jogo button
+{
+    top: 0;
+    right: 0;
+    float: right;
+    border: none;
+    padding: 32px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #f44336;
+    position: absolute;
+    background-color: #feedeb; 
+}
+
+.palpites
+{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 178px;
+    overflow-y: auto;
+    position: absolute;
+    border-top: 1px solid #ddd;
+}
+
+.palpites .palpite
+{
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.palpites .palpite:hover
+{
+    background-color: #eee;
+}
+
+.palpites .palpite:not(:last-child)
+{
+    border-bottom: 1px solid #ddd;
+}
+
+.palpites .palpite .info-left
+{
+    top: 44px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.palpites .palpite .imagem
+{
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+.palpites .palpite .info-right
+{
+    top: 42px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+}

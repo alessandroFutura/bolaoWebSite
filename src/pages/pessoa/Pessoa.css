@@ -84,11 +84,6 @@
 
 .jogos .jogo
 {
-    padding: 15px;
-}
-
-.jogos .jogo
-{
     padding: 10px;
     cursor: pointer;
     position: relative;
@@ -138,8 +133,9 @@
 
 .jogos .jogo .score img
 {
-    width: 64px;
-    height: 42px;
+    width: 48px;
+    height: 32px;
+    margin: 8px 0;
 }
 
 .jogos .jogo .score span
@@ -167,6 +163,7 @@
 {
     width: 24%;
     float: left;
+    padding: 2px;
     line-height: 20px;
     text-align: center;
 }
@@ -199,6 +196,7 @@
 .jogos .jogo .score .left span,
 .jogos .jogo .score .right span
 {
+    line-height: 0;
     font-size: 18px;
-    padding: 11px 10px;
+    padding: 12px 10px;
 }
