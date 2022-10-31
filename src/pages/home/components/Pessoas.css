@@ -14,13 +14,17 @@
 {
     width: 100%;
     padding: 20px;
-    display: table;
-    cursor: pointer;
+    display: table;    
     position: relative;
     transition: all .3s ease;
 }
 
-.home .panel.people .body .person:hover
+.home .panel.people .body .person.person-hover
+{
+    cursor: pointer;
+}
+
+.home .panel.people .body .person.person-hover:hover
 {
     background-color: #eee;
 }

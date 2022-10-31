@@ -1,9 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
+
+import Context from '../../../Context.js';
 
 import axios from "axios";
 
 import moment from 'moment';
 import 'moment/locale/pt-br';
+
+import {BsFillPersonLinesFill} from "react-icons/bs";
 
 import "./Calendario.css";
 
@@ -14,6 +18,7 @@ const Calendario = () => {
     },[]);
     
     const [calendario, setCalendario] = useState([]);
+    const {matchClass, setMatchClass} = useContext(Context);
 
     const getCalendario = () => {
         axios.post(`http://localhost/bolaocopa2022/?action=getCalendario`).then((res) => {
@@ -24,12 +29,18 @@ const Calendario = () => {
     };
 
     const handleMatchClick = (jogo) => {
-        window.location.href = `/jogo?idJogo=${jogo.idJogo}`;
+        if(jogo.habilitado){
+            window.location.href = `/jogo?idJogo=${jogo.idJogo}`;
+        }
+    };
+
+    const handleButtonTitkeClick = () => {
+        setMatchClass('');
     };
 
     return (
-        <div className="panel calendar">
-            <div className="title">Tabela de Jogos</div>
+        <div className={`panel calendar ${matchClass}`}>
+            <div className="title">Tabela de Jogos<button onClick={() => handleButtonTitkeClick()}><BsFillPersonLinesFill/> Participantes</button></div>
             <div className="body">
                 {calendario.map((dia, key1) => (
                     <div className="calendar" key={key1}>
@@ -39,7 +50,7 @@ const Calendario = () => {
                         </div>
                         <div className="matches">
                             {dia.jogos.map((jogo, key2) => (
-                                <div className="match" key={key2} onClick={() => handleMatchClick(jogo)}>
+                                <div className={`match${jogo.habilitado ? ' match-hover' : ''}`} key={key2} onClick={() => handleMatchClick(jogo)}>
                                     <div className="info">GRUPO {jogo.grupo} - {jogo.estadio} - {jogo.horario}</div>
                                     <div className="score">
                                         <div className="left">
@@ -59,7 +70,7 @@ const Calendario = () => {
                 ))}
             </div>
         </div>
-    )
+    );
 }
 
 export default Calendario;

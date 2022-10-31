@@ -61,13 +61,17 @@ const Jogo = () => {
                 <div className="info">GRUPO {jogo.grupo} - {jogo.estadio} - {moment(jogo.data).format('DD/MM')} {moment(jogo.data).format('ddd').toUpperCase()} {jogo.horario}</div>
                 <div className="score">
                     <div className="left">
-                        <img src={`${jogo.imagemMandante}`} /><span>{jogo.timeMandante.replace('-',' ').replace('-',' ')}</span>
+                        <img src={`${jogo.imagemMandante}`} />
+                        <span className="desktop">{jogo.timeMandante.replace('-',' ').replace('-',' ')}</span>
+                        <span className="mobile">{jogo.timeMandante.substring(0,3)}</span>
                     </div>
                     <div className="center">
                         <span>{jogo.placarMandante}</span><span>x</span><span>{jogo.placarVisitante}</span>
                     </div>
                     <div className="right">
-                        <img src={`${jogo.imagemVisitante}`} /><span>{jogo.timeVisitante.replace('-',' ').replace('-',' ')}</span>
+                        <img src={`${jogo.imagemVisitante}`} />
+                        <span className="desktop">{jogo.timeVisitante.replace('-',' ').replace('-',' ')}</span>
+                        <span className="mobile">{jogo.timeVisitante.substring(0,3)}</span>                        
                     </div>
                 </div>
                 <button className="btn btn-back" onClick={() => handleBackClick()}>

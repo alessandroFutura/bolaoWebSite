@@ -23,19 +23,18 @@
     text-transform: uppercase;
 }
 
-.home .panel.calendar .body .matches
-{
-
-}
-
 .home .panel.calendar .body .matches .match
 {
-    padding: 10px;
-    cursor: pointer;
+    padding: 10px;    
     transition: all .3s ease;
 }
 
-.home .panel.calendar .body .matches .match:hover
+.home .panel.calendar .body .matches .match.match-hover
+{
+    cursor: pointer;
+}
+
+.home .panel.calendar .body .matches .match.match-hover:hover
 {
     background-color: #eee;
 }
