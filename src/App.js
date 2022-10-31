@@ -19,8 +19,10 @@ function App(){
         getDataCopa();
     },[]);
 
+    const urlApi = `http://${window.location.hostname}/bolao/api/`;
+
     const getDataCopa = () => {
-        axios.post('http://localhost/bolaocopa2022/?' + new URLSearchParams({
+        axios.post(`${urlApi}?` + new URLSearchParams({
             action: 'getDataCopa'
         })).then((res) => {
             if(moment(res.data).diff(moment(),'seconds') > 0){
@@ -51,8 +53,8 @@ function App(){
     };
 
     return(
-        <Context.Provider value={{token, matchClass, setMatchClass}}>
-            <BrowserRouter>
+        <Context.Provider value={{token, urlApi, matchClass, setMatchClass}}>
+            <BrowserRouter basename="/">
                 <h1>Bolão Copa do Mundo Catar 2022<span>{contagemRegressiva}</span></h1>
                 <Routes>
                     <Route element={<Home/>} path="/" exact />

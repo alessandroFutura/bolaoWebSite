@@ -18,10 +18,10 @@ const Calendario = () => {
     },[]);
     
     const [calendario, setCalendario] = useState([]);
-    const {matchClass, setMatchClass} = useContext(Context);
+    const {urlApi, matchClass, setMatchClass} = useContext(Context);
 
     const getCalendario = () => {
-        axios.post(`http://localhost/bolaocopa2022/?action=getCalendario`).then((res) => {
+        axios.post(`${urlApi}?action=getCalendario`).then((res) => {
             setCalendario(res.data);
         }).catch((res) => {
             

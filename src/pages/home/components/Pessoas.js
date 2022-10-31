@@ -14,11 +14,11 @@ const Pessoas = () => {
         getPessoas();
     },[]);
 
-    const {token, setMatchClass} = useContext(Context);
+    const {token, urlApi, setMatchClass} = useContext(Context);
     const [pessoas, setPessoas] = useState([]);    
     
     const getPessoas = () => {
-        axios.post('http://localhost/bolaocopa2022/?' + new URLSearchParams({
+        axios.post(`${urlApi}?` + new URLSearchParams({
             action: 'getPessoas',
             token: token
         })).then((res) => {

@@ -19,7 +19,7 @@ const Pessoa = () => {
     const [pessoa, setPessoa] = useState({});
     const [jogos, setJogos] = useState([]);
 
-    const {token} = useContext(Context);
+    const {token, urlApi} = useContext(Context);
 
     const [dataSort, setDataSort] = useState({
         keySortData: 'idJogo',
@@ -33,7 +33,7 @@ const Pessoa = () => {
     },[]);
 
     const getPessoa = () => {
-        axios.post('http://localhost/bolaocopa2022/?' + new URLSearchParams({
+        axios.post(`${urlApi}?` + new URLSearchParams({
             action: 'getPessoa',
             token: token,
             idPessoa: new URL(window.location.href).searchParams.get('idPessoa')
@@ -56,7 +56,7 @@ const Pessoa = () => {
     };
 
     const saveResultado = (data) => {
-        axios.post('http://localhost/bolaocopa2022/?' + new URLSearchParams({
+        axios.post(`${urlApi}?` + new URLSearchParams({
             action: 'saveResultado'            
         }), data).then((res) => {
             let copiaJogos = jogos;

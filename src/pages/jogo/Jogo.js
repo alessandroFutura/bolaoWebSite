@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 
 import axios from "axios";
 
@@ -7,6 +7,8 @@ import 'moment/locale/pt-br';
 
 import {TiArrowBackOutline} from "react-icons/ti";
 
+import Context from '../../Context.js';
+
 import "./Jogo.css";
 
 const Jogo = () => {
@@ -14,6 +16,8 @@ const Jogo = () => {
     useEffect(() => {
         getJogo();
     },[]);
+
+    const {urlApi} = useContext(Context);
 
     const [jogo, setJogo] = useState({
         grupo: '',
@@ -29,7 +33,7 @@ const Jogo = () => {
     const [pessoas, setPessoas] = useState([]);
 
     const getJogo = () => {
-        axios.post(`http://localhost/bolaocopa2022/?action=getJogo&idJogo=${new URL(window.location.href).searchParams.get('idJogo')}`).then((res) => {
+        axios.post(`${urlApi}?action=getJogo&idJogo=${new URL(window.location.href).searchParams.get('idJogo')}`).then((res) => {
             setJogo({
                 grupo: res.data.grupo,
                 estadio: res.data.estadio,
