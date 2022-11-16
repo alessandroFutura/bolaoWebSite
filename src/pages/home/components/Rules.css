@@ -1,0 +1,70 @@
+.home .panel.rules
+{
+    width: 35%;
+    right: -35%;
+    background-color: #fff;
+    transition: all .3s ease;
+}
+
+.home .panel.rules .title
+{
+    background-color: #ff9800;
+}
+
+.home .panel.rules .title button
+{
+    background-color: #bb7002;
+}
+
+.home .panel.rules .body
+{
+    padding: 20px;
+}
+
+.home .panel.rules .body .info
+{
+    padding-bottom: 20px;    
+}
+
+.home .panel.rules .body .info:not(:last-child)
+{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.home .panel.rules .body .info h5
+{
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.home .panel.rules .body .info .rule:not(:last-child)
+{
+    margin-bottom: 10px;
+}
+
+.home .panel.rules .body .info .rule label
+{
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.home .panel.rules .body .info .rule span
+{
+    color: gray;
+    display: block;
+    margin: 0 20px;
+}
+
+.home .panel.rules .body .info .prizes
+{
+    margin-top: 5px;
+}
+
+.home .panel.rules.visible
+{
+    right: 0;
+}

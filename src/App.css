@@ -33,6 +33,22 @@ h1 span
     font-weight: normal;
 }
 
+h1.none
+{
+    text-align: center;
+}
+
+button:not(:disabled)
+{
+    cursor: pointer;
+}
+
+.only-mobile-visible
+{
+    display: none;
+    visibility: hidden;
+}
+
 @media (max-width: 700px)
 {
     h1
@@ -47,5 +63,19 @@ h1 span
         margin: 10px 0;
         display: block;
         font-size: 14px;
-    }   
+    }
+    h1.none
+    {
+        padding: 26px;
+    }
+    .only-mobile-visible
+    {
+        display: block;
+        visibility: visible;
+    }
+    .only-desktop-visible
+    {
+        display: none;
+        visibility: hidden;
+    } 
 }

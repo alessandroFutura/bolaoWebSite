@@ -1,31 +1,31 @@
-.jogo
+.data .match
 {
     padding: 15px;
     position: relative;
     transition: all .3s ease;
 }
 
-.jogo .info
+.data .match .info
 {
     font-size: 12px;
     text-align: center;
     margin-bottom: 5px;
 }
 
-.jogo .score
+.data .match .score
 {
     width: 100%;
     display: table;
 }
 
-.jogo .score img
+.data .match .score img
 {
     width: 48px;
     height: 32px;
     margin: 8px 0;
 }
 
-.jogo .score span
+.data .match .score span
 {
     height: 20px;
     padding: 0 5px;
@@ -34,21 +34,20 @@
     text-transform: uppercase;
 }
 
-.jogo .score .left
+.data .match .score .left
 {
     width: 38%;
     float: left;
     text-align: right;
 }
 
-.jogo .score .left img,
-.jogo .score .left span
+.data .match .score .left img,
+.data .match .score .left span
 {
-    float: right;
-    display: block;    
+    float: right;      
 }
 
-.jogo .score .center
+.data .match .score .center
 {
     width: 24%;
     float: left;
@@ -57,38 +56,37 @@
     text-align: center;
 }
 
-.jogo .score .center span:nth-child(2)
+.data .match .score .center span:nth-child(2)
 {
     font-size: 12px;
 }
 
-.jogo .score .right
+.data .match .score .right
 {
     width: 38%;
     float: left;
     text-align: left;
 }
 
-.jogo .score .right img,
-.jogo .score .right span
+.data .match .score .right img,
+.data .match .score .right span
 {
-    float: left;
-    display: block;    
+    float: left;  
 }
 
-.jogo .score .left span,
-.jogo .score .right span
+.data .match .score .left span,
+.data .match .score .right span
 {
     margin: 12px 6px;
 }
 
-.jogo .score .left span.mobile,
-.jogo .score .right span.mobile
+.data .match .score .left span.mobile,
+.data .match .score .right span.mobile
 {
     display: none;
 }
 
-.jogo button
+.data .match button
 {
     top: 0;
     right: 0;
@@ -102,7 +100,7 @@
     background-color: #feedeb; 
 }
 
-.palpites
+.data .guesses
 {
     left: 0;
     right: 0;
@@ -113,7 +111,7 @@
     border-top: 1px solid #ddd;
 }
 
-.palpites .palpite
+.data .guesses .guess
 {
     padding: 10px;
     cursor: pointer;
@@ -122,17 +120,17 @@
     transition: all .3s ease;
 }
 
-.palpites .palpite:hover
+.data .guesses .guess:hover
 {
     background-color: #eee;
 }
 
-.palpites .palpite:not(:last-child)
+.data .guesses .guess:not(:last-child)
 {
     border-bottom: 1px solid #ddd;
 }
 
-.palpites .palpite .info-left
+.data .guesses .guess .info-left
 {
     top: 44px;
     left: 20px;
@@ -142,7 +140,7 @@
     border-radius: 4px;
 }
 
-.palpites .palpite .imagem
+.data .guesses .guess .imagem
 {
     width: 48px;
     height: 48px;
@@ -151,7 +149,7 @@
     background-size: cover;
 }
 
-.palpites .palpite .info-right
+.data .guesses .guess .info-right
 {
     top: 42px;
     right: 20px;
@@ -162,26 +160,16 @@
 
 @media (max-width:700px)
 {
-    .jogo
+    .data .match
     {
         margin-right: 94px;
     }
-    .jogo button
+    .data .match button
     {
         right: -94px;
     }
-    .palpites
+    .data .guesses
     {
         top: 188px;
-    }
-    .jogo .score .left span.desktop,
-    .jogo .score .right span.desktop
-    {
-        display: none;
-    }
-    .jogo .score .left span.mobile,
-    .jogo .score .right span.mobile
-    {
-        display: block;
     }
 }

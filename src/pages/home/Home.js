@@ -1,17 +1,33 @@
-import React from "react";
+import React, {useState, useContext} from "react";
 
-import Pessoas from "./components/Pessoas.js";
-import Calendario from "./components/Calendario.js";
+import Rules from "./components/Rules.js";
+import People from "./components/People.js";
+import Calendar from "./components/Calendar.js";
+
+import Context from '../../Context.js';
 
 import "./Home.css";
 
-const Home = () => {   
+const Home = () => {
+
+    const {token, urlApi} = useContext(Context);
+    
+    const [rulesClass, setRulesClass] = useState('');
+    const [matchesClass, setMatchesClass] = useState('');
     
     return (
-        <div className="home">            
-            <Pessoas/>
-            <Calendario/>
-        </div>
+        <Context.Provider value={{
+            token,
+            urlApi,
+            rulesClass, setRulesClass,
+            matchesClass, setMatchesClass
+        }}>
+            <div className="home">            
+                <People/>
+                <Calendar/>
+                <Rules/>
+            </div>
+        </Context.Provider>
     )
 
 }

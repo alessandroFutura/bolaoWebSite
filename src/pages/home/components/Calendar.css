@@ -10,6 +10,11 @@
     background-color: #4caf50;
 }
 
+.home .panel.calendar .title button
+{
+    background-color: #437c45;
+}
+
 .home .panel.calendar .body .day
 {
     font-weight: bold;

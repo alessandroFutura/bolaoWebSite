@@ -1,9 +1,9 @@
-.pessoa
+.person-page
 {
     text-align: center;
 }
 
-.pessoa .imagem
+.person-page .image
 {
     width: 68px;
     float: left;
@@ -13,55 +13,54 @@
     background-size: cover;
 }
 
-.pessoa .nome
+.person-page .name
 {
     float: left;
     margin: 38px 0;
     font-size: 24px;
 }
 
-.pessoa button
+.person-page button
 {
     float: right;
     border: none;    
     font-size: 30px;
-    cursor: pointer;
     padding: 30px 37px;  
 }
 
-.pessoa button.btn-back
+.person-page button.btn-back
 {
     color: #f44336;
     background-color: #feedeb;
 }
 
-.pessoa button.btn-sort
+.person-page button.btn-sort
 {
     color: #2196f3;
     background-color: #f0f8fe;
 }
 
-.pessoa button.btn-sort.btn-selected
+.person-page button.btn-sort.btn-selected
 {
     padding: 29px 36px;
     border: 1px solid #b0dcff;
     background-color: #d2ebff;
 }
 
-.pessoa button.btn-sort.btn-sort-asc svg:nth-child(2),
-.pessoa button.btn-sort.btn-sort-desc svg:nth-child(1)
+.person-page button.btn-sort.btn-sort-asc svg:nth-child(2),
+.person-page button.btn-sort.btn-sort-desc svg:nth-child(1)
 {
     display: none;
 }
 
-.pessoa button span
+.person-page button span
 {
     display: block;
     font-size: 12px;
 }
 
-.pessoa .pontos,
-.pessoa .acertos
+.person-page .hits,
+.person-page .points
 {
     float: right;
     font-size: 24px;
@@ -70,7 +69,7 @@
     font-weight: bold;
 }
 
-.pessoa .pessoa-jogos
+.person-page .matches
 {
     left: 0;
     right: 0;
@@ -81,29 +80,34 @@
     border-top: 1px solid #ddd;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo
+.person-page .matches .match
 {
     padding: 10px;
     position: relative;
     transition: all .3s ease;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo.habilitado
+.person-page .matches .match .info
+{
+    color: gray;
+}
+
+.person-page .matches .match.visible
 {
     cursor: pointer;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo.habilitado:hover
+.person-page .matches .match.visible:hover
 {
     background-color: #eee;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo:not(:last-child)
+.person-page .matches .match:not(:last-child)
 {
     border-bottom: 1px solid #ddd;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .info-left
+.person-page .matches .match .info-left
 {
     top: 44px;
     left: 20px;
@@ -113,7 +117,7 @@
     border-radius: 4px;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .info-right
+.person-page .matches .match .info-right
 {
     top: 42px;
     right: 20px;
@@ -122,67 +126,67 @@
     position: absolute;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .info-2,
-.pessoa .pessoa-jogos .pessoa-jogo .info-3
+.person-page .matches .match .info-2,
+.person-page .matches .match .info-3
 {
     text-align: center;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score
+.person-page .matches .match .score
 {
     width: 100%;
     display: table;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score img
+.person-page .matches .match .score img
 {
     width: 48px;
     height: 32px;
     margin: 8px 0;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score span
+.person-page .matches .match .score span
 {
     padding: 0 5px;
     line-height: 20px;
     text-transform: uppercase;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score .left
+.person-page .matches .match .score .left
 {
-    width: 38%;
+    width: 40%;
     float: left;
     text-align: right;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score .left img,
-.pessoa .pessoa-jogos .pessoa-jogo .score .left span
+.person-page .matches .match .score .left img,
+.person-page .matches .match .score .left span
 {
     float: right;
     display: block;    
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score .center
+.person-page .matches .match .score .center
 {
-    width: 24%;
+    width: 20%;
     float: left;
     padding: 2px;
     line-height: 20px;
     text-align: center;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score .center .palpite-txt
+.person-page .matches .match .score .center .guess-txt
 {
     font-size: 14px;
     font-weight: bold;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score .center .palpite-input
+.person-page .matches .match .score .center .guess-input
 {
     margin-top: 5px;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score .center .palpite-input input
+.person-page .matches .match .score .center .guess-input input
 {
     width: 40px;
     padding: 4px;
@@ -190,107 +194,108 @@
     text-align: center;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score .center span:nth-child(2)
+.person-page .matches .match .score .center span:nth-child(2)
 {
     font-size: 12px;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score .right
+.person-page .matches .match .score .right
 {
     width: 38%;
     float: left;
     text-align: left;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score .right img,
-.pessoa .pessoa-jogos .pessoa-jogo .score .right span
+.person-page .matches .match .score .right img,
+.person-page .matches .match .score .right span
 {
     float: left;
     display: block;    
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo .score .left span,
-.pessoa .pessoa-jogos .pessoa-jogo .score .right span
+.person-page .matches .match .score .left span,
+.person-page .matches .match .score .right span
 {
     line-height: 0;
     font-size: 18px;
+    margin-top: 10px;
     padding: 12px 10px;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo:not(.visivel) .resultado,
-.pessoa .pessoa-jogos .pessoa-jogo:not(.visivel) .info-left,
-.pessoa .pessoa-jogos .pessoa-jogo:not(.visivel) .info-right,
-.pessoa .pessoa-jogos .pessoa-jogo:not(.visivel) .palpite-txt
+.person-page .matches .match:not(.visible) .result,
+.person-page .matches .match:not(.visible) .info-left,
+.person-page .matches .match:not(.visible) .info-right,
+.person-page .matches .match:not(.visible) .guess-txt
 {
     display: none;
 }
 
-.pessoa .pessoa-jogos .pessoa-jogo.visivel .palpite-input
+.person-page .matches .match.visible .guess-input
 {
     display: none;
 }
 
 @media (max-width:700px) 
 {
-    .pessoa .imagem
+    .person-page .image
     {
         width: 56px;
         height: 56px;
         margin: 10px;
     }
-    .pessoa .nome
+    .person-page .name
     {
         margin: 20px 0;
         font-size: 20px;
     }
-    .pessoa button
+    .person-page button
     {
         top: 164px;
         padding: 15px 0;
         position: absolute;        
     }
-    .pessoa button.btn-back
+    .person-page button.btn-back
     {
         left: 0;
         width: 33%;
     }
-    .pessoa button.btn-sort-pt
+    .person-page button.btn-sort-pt
     {
         left: 33%;
         right: 33%;
         width: 34%;
     }
-    .pessoa button.btn-sort-dt
+    .person-page button.btn-sort-dt
     {
         right: 0;
         width: 33%;
     }
-    .pessoa button.btn-sort.btn-selected
+    .person-page button.btn-sort.btn-selected
     {
         border: none;
         padding: 15px 0;
     }
-    .pessoa .pontos,
-    .pessoa .acertos
+    .person-page .hits,
+    .person-page .points
     {
         font-size: 20px;
         margin: 20px 10px;
     }
-    .pessoa .pessoa-jogos
+    .person-page .matches
     {
         top: 245px;
     }
-    .pessoa .pessoa-jogos .pessoa-jogo.editavel .score .left,
-    .pessoa .pessoa-jogos .pessoa-jogo.editavel .score .right
+    .person-page .matches .match.editable .score .left,
+    .person-page .matches .match.editable .score .right
     {
         width: 33%;
     }
-    .pessoa .pessoa-jogos .pessoa-jogo.editavel .score .center
+    .person-page .matches .match.editable .score .center
     {
         width: 34%;
     }
-    .pessoa .pessoa-jogos .pessoa-jogo.editavel .score .left span, 
-    .pessoa .pessoa-jogos .pessoa-jogo.editavel .score .right span
+    .person-page .matches .match.editable .score .left span, 
+    .person-page .matches .match.editable .score .right span
     {
         margin-top: 10px;
     }

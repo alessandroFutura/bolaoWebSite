@@ -10,6 +10,16 @@
     background-color: #03a9f4;
 }
 
+.home .panel.people .title button
+{
+    background-color: #3f51b5;
+}
+
+.home .panel.people .title button:nth-child(2)
+{
+    right: 106px;
+}
+
 .home .panel.people .body .person
 {
     width: 100%;
@@ -27,6 +37,16 @@
 .home .panel.people .body .person.person-hover:hover
 {
     background-color: #eee;
+}
+
+.home .panel.people .body .person.person-amI
+{
+    background-color: #fff06d;
+}
+
+.home .panel.people .body .person.person-amI:hover
+{
+    background-color: #ffe717;
 }
 
 .home .panel.people .body .person:not(:last-child)
