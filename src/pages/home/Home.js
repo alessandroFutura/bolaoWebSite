@@ -10,7 +10,7 @@ import "./Home.css";
 
 const Home = () => {
 
-    const {token, urlApi} = useContext(Context);
+    const {token, urlApi, countDown} = useContext(Context);
     
     const [rulesClass, setRulesClass] = useState('');
     const [matchesClass, setMatchesClass] = useState('');
@@ -19,6 +19,7 @@ const Home = () => {
         <Context.Provider value={{
             token,
             urlApi,
+            countDown,
             rulesClass, setRulesClass,
             matchesClass, setMatchesClass
         }}>

@@ -1,0 +1,129 @@
+.results
+{
+    left: 0;
+    right: 0;
+    top: 76px;
+    bottom: 0;
+    overflow-y: auto;
+    position: absolute;
+    border-top: 1px solid #ddd;
+}
+
+.results .match
+{
+    padding: 10px;
+    position: relative;
+    transition: all .3s ease;
+}
+
+.results .match .info
+{
+    color: gray;
+    text-align: center;
+}
+
+.results .match:not(:last-child)
+{
+    border-bottom: 1px solid #ddd;
+}
+
+.results .match .score
+{
+    width: 100%;
+    display: table;
+}
+
+.results .match .score img
+{
+    width: 48px;
+    height: 32px;
+    margin: 8px 0;
+}
+
+.results .match .score span
+{
+    padding: 0 5px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.results .match .score .left
+{
+    width: 40%;
+    float: left;
+    text-align: right;
+}
+
+.results .match .score .left img,
+.results .match .score .left span
+{
+    float: right;
+    display: block;    
+}
+
+.results .match .score .center
+{
+    width: 20%;
+    float: left;
+    padding: 2px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.results .match .score .center .guess-input
+{
+    margin-top: 5px;
+}
+
+.results .match .score .center .guess-input input
+{
+    width: 40px;
+    padding: 4px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.results .match .score .center span:nth-child(2)
+{
+    font-size: 12px;
+}
+
+.results .match .score .right
+{
+    width: 38%;
+    float: left;
+    text-align: left;
+}
+
+.results .match .score .right img,
+.results .match .score .right span
+{
+    float: left;
+    display: block;    
+}
+
+.results .match .score .left span,
+.results .match .score .right span
+{
+    line-height: 0;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 12px 10px;
+}
+
+@media (max-width:700px) 
+{
+    .results
+    {
+        top: 88px;
+    }
+    .results .match .score .left,
+    .results .match .score .right
+    {
+        width: 33%;
+    }
+    .results .match .score .center
+    {
+        width: 34%;
+    }
+}

@@ -7,6 +7,7 @@ import moment from 'moment';
 import Home from "./pages/home/Home.js";
 import Match from "./pages/match/Match.js";
 import Person from "./pages/person/Person.js";
+import Result from "./pages/result/Result.js";
 
 import Context from './Context.js';
 
@@ -18,7 +19,7 @@ function App(){
         getCupDate();
     },[]);
 
-    const urlApi = `http://${window.location.hostname}/bolao/api/`;
+    const urlApi = `http://${window.location.hostname}/api/`;
     const token = new URL(window.location.href).searchParams.get('token') || null;
 
     const timer = useRef(null);
@@ -57,6 +58,7 @@ function App(){
                     <Route element={<Home/>} path="/" exact />
                     <Route element={<Match/>} path="/match" />
                     <Route element={<Person/>} path="/person" />
+                    <Route element={<Result/>} path="/result" />
                 </Routes>
             </BrowserRouter>
         </Context.Provider>

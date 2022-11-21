@@ -50,7 +50,13 @@ const People = () => {
     };
 
     const handleButtonMatchesClick = () => {
-        setMatchesClass('visible');
+        console.log(token,countDown);
+        if(!!token && !!countDown){
+            window.document.getElementsByClassName('person-amI')[0].click();
+            setTimeout(() => setMatchesClass('visible'), 1000);
+        } else {
+            setMatchesClass('visible');
+        }        
     };
 
     return (

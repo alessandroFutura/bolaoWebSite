@@ -5,8 +5,6 @@ import axios from "axios";
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
-import ReactTooltip from 'react-tooltip';
-
 import {TiArrowBackOutline} from "react-icons/ti";
 
 import Context from '../../Context.js';
@@ -18,6 +16,8 @@ const Match = () => {
     useEffect(() => {
         getMatch();
     },[]);
+
+    const maxWidht = window.innerWidth > 700 ? 7 : 22;
 
     const {urlApi} = useContext(Context);
 
@@ -42,11 +42,19 @@ const Match = () => {
                 group: res.data.group,
                 stadium: res.data.stadium,
                 homeName: res.data.homeName,
+                homeColor: res.data.homeColor,
                 homeImage: res.data.homeImage,
                 homeScore: res.data.homeScore,
+                homePercent: res.data.homePercent,
+                homeVictories: res.data.homeVictories,
                 visitorName: res.data.visitorName,
+                visitorColor: res.data.visitorColor,
                 visitorImage: res.data.visitorImage,
-                visitorScore: res.data.visitorScore
+                visitorScore: res.data.visitorScore,
+                visitorPercent: res.data.visitorPercent,
+                visitorVictories: res.data.visitorVictories,
+                equalityPercent: res.data.equalityPercent,
+                equalities: res.data.equalities,
             });
             setPeople(res.data.people);
         }).catch((res) => {
@@ -61,6 +69,24 @@ const Match = () => {
     const handleBackClick = () => {
         window.location.href = '/';
     };
+
+    const numberFormat = (params) => {
+        let options = {
+            locale: 'pt-BR',
+            minimumFractionDigits: (typeof params.minDecimals === 'undefined' ? 2 : params.minDecimals),
+            maximumFractionDigits: (typeof params.maxDecimals === 'undefined' ? 2 : params.maxDecimals)
+        };
+        if(!!params.style){
+            options.style = params.style;
+        }
+        if(!!params.currency){
+            options.currency = params.currency;
+        }
+        if(params.style === 'percent'){
+            params.value = parseFloat(params.value || 0)/100;
+        }
+        return parseFloat(params.value).toLocaleString((params.locale || 'pt-BR'), options);
+    }
 
     return (
         <div className="data">
@@ -80,6 +106,17 @@ const Match = () => {
                         <span className="only-desktop-visible">{match.visitorName.replace('-',' ').replace('-',' ')}</span>
                         <span className="only-mobile-visible">{match.visitorName.substring(0,3)}</span>                        
                     </div>
+                    <div className="percents">
+                        <div className="homePercent" style={{backgroundColor:match.homeColor, width:`${match.homePercent}%`}}>
+                            <span style={{visibility: match.homePercent > maxWidht ? 'visible' : 'hidden'}}>({match.homeVictories}) {numberFormat({value:match.homePercent})}%</span>                         
+                        </div>
+                        <div className="equalityPercent" style={{width: `${match.equalityPercent}%`}}>
+                            <span style={{visibility: match.equalityPercent > maxWidht ? 'visible' : 'hidden'}}>({match.equalities}) {numberFormat({value:match.equalityPercent})}%</span>
+                        </div>
+                        <div className="visitorPercent" style={{backgroundColor: match.visitorColor, width: `${match.visitorPercent}%`}}>
+                            <span style={{visibility: match.visitorPercent > maxWidht ? 'visible' : 'hidden'}}>({match.visitorVictories}) {numberFormat({value:match.visitorPercent})}%</span>
+                        </div>
+                    </div>
                 </div>
                 <button className="btn btn-back" onClick={() => handleBackClick()}>
                     <TiArrowBackOutline/>
@@ -88,15 +125,17 @@ const Match = () => {
             <div className="guesses">
                 {people.map((person, key) => (
                     <div key={key} className="guess" onClick={() => handlePersonClick(person)}>
-                        <div className="info-left" data-tip={person.ruleDescription} style={{backgroundColor: person.ruleColor}}></div>
-                        <div className="imagem box-shadow" style={{backgroundImage: `url(${person.image})`}}></div>
-                        <div className="nmPessoa">{person.personName}</div>
-                        <div className="placar">{person.homeScore} x {person.visitorScore}</div>
+                        <div className="person">
+                            <div className="imagem box-shadow" style={{backgroundImage: `url(${person.image})`}}></div>
+                            <div className="nmPessoa">{person.personName}</div>
+                            <div className="placar">{person.homeScore} x {person.visitorScore}</div>
+                            <div className="ruleDescription" style={{color: person.ruleColor}}>{person.ruleDescription}</div>
+                        </div>                        
+                        <div className="info-left" data-for={`data-tip-${key}`} data-tip={person.ruleDescription} style={{backgroundColor: person.ruleColor}}></div>
                         <div className="info-right" style={{color: person.ruleColor}}>{person.rulePoints} pts</div>
-                    </div>
+                    </div>                    
                 ))}
-            </div>
-            <ReactTooltip />
+            </div>            
         </div>
     )
 }
