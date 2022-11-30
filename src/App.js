@@ -19,7 +19,7 @@ function App(){
         getCupDate();
     },[]);
 
-    const urlApi = `http://${window.location.hostname}/api/`;
+    const urlApi = `http://${window.location.hostname}/bolao/api/`;
     const token = new URL(window.location.href).searchParams.get('token') || null;
 
     const timer = useRef(null);

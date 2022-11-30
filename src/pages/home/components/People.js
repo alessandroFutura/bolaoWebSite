@@ -72,7 +72,7 @@ const People = () => {
             </div>
             <div className="body">
                 {people.map((person, key) => (
-                    <div className={`person${person.able ? ' person-hover' : ''}${person.amI ? ' person-amI' : ''}`} key={key} onClick={() => handlePersonClick(person)}>
+                    <div className={`person${person.able ? ' person-hover' : ''}${person.amI ? ' person-amI' : ''} podium-${person.position}`} key={key} onClick={() => handlePersonClick(person)}>
                         <div className="position">{person.position}</div>
                         <div className="image box-shadow" style={{backgroundImage: `url(${person.image})`}}></div>
                         <div className="name">{person.personName}</div>

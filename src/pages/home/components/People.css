@@ -66,6 +66,21 @@
     background-color: #8bc34a;
 }
 
+.home .panel.people .body .person.podium-1 .position
+{
+    background-color: gold;
+}
+
+.home .panel.people .body .person.podium-2 .position
+{
+    background-color: #80bdee;
+}
+
+.home .panel.people .body .person.podium-3 .position
+{
+    background-color: #d32f2f;
+}
+
 .home .panel.people .body .person .image
 {
     float: left;

@@ -90,7 +90,7 @@ const Rules = () => {
                     Total de participantes: <b>{totalParticipants}</b><br/>
                     Valor por participante: <b>R$ {numberFormat({value: ticketValue})}</b><br/>
                     Custo de manutenção: <b>R$ {numberFormat({value: expenseValue})}</b><br/>
-                    Valor total da prêmiação: <b>R$ {numberFormat({value: totalPrizeValue})}</b><br/>
+                    Valor total da premiação: <b>R$ {numberFormat({value: totalPrizeValue})}</b><br/>
                     <div className="prizes">
                         {prizes.map((prize, key) => (
                             <div className="prize" key={key}>
